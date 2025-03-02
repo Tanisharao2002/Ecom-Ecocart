@@ -1,6 +1,7 @@
 {
   "name": "ecocart",
   "version": "0.1.0",
+  "homepage": "https://tanisharao2002.github.io/Ecom-Ecocart/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
