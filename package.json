@@ -1,7 +1,7 @@
 {
   "name": "ecocart",
   "version": "0.1.0",
-  "homepage": "https://tanisharao2002.github.io/Ecom-Ecocart/",
+  "homepage": "https://ecom-ecocart11.vercel.app/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
