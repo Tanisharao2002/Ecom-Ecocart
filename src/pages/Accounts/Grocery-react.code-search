@@ -1,0 +1,69 @@
+# Query: Grocery-react
+# Flags: CaseSensitive
+# ContextLines: 1
+
+14 results - 8 files
+
+src\Component\Header.jsx:
+  218                {/* <li className="nav-item">
+  219:                 <Link className="nav-link" to="/Grocery-react/">
+  220                    Home
+
+src\pages\Accounts\MyAcconutNotification.jsx:
+  431                  <li className="nav-item">
+  432:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  433                          <i className="fas fa-sign-out-alt me-2" />
+
+src\pages\Accounts\MyAcconutPaymentMethod.jsx:
+  140                        <li className="nav-item">
+  141:                         <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  142                            <i className="fas fa-sign-out-alt me-2" />
+
+  408                    <li className="nav-item">
+  409:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  410                          <i className="fas fa-sign-out-alt me-2" />
+
+src\pages\Accounts\MyAcconutSetting.jsx:
+  189                      <li className="nav-item">
+  190:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  191                          <i className="fas fa-sign-out-alt me-2" />
+
+  325                    <li className="nav-item">
+  326:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  327                          <i className="fas fa-sign-out-alt me-2" />
+
+src\pages\Accounts\MyAccountAddProducts.jsx:
+  168                          className="nav-link "
+  169:                         to="/"
+  170                          onClick={onClickSignOut}
+
+  374                      className="nav-link "
+  375:                     to="/"
+  376                      onClick={onClickSignOut}
+
+src\pages\Accounts\MyAccountAddress.jsx:
+  142                        <li className="nav-item">
+  143:                         <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  144                            <i className="fas fa-sign-out-alt me-2" />
+
+  615                    <li className="nav-item">
+  616:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  617                          <i className="fas fa-sign-out-alt me-2" />
+
+src\pages\Accounts\MyAccountOrder.jsx:
+  136                      <li className="nav-item">
+  137:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  138                          <i className="fas fa-sign-out-alt me-2" />
+
+  312                  <li className="nav-item">
+  313:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  314                          <i className="fas fa-sign-out-alt me-2" />
+
+src\pages\Accounts\MyAccountSupplier.jsx:
+  122                    <li className="nav-item">
+  123:                     <Link className="nav-link" to="/" onClick={onClickSignOut}>
+  124                        <i className="fas fa-sign-out-alt me-2" />
+
+  207              <li className="nav-item">
+  208:                       <Link className="nav-link " to="/" onClick={onClickSignOut}>
+  209                          <i className="fas fa-sign-out-alt me-2" />

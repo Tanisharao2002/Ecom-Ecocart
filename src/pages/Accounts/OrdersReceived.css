@@ -1,0 +1,35 @@
+.orders-received {
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.orders-received h2 {
+  font-size: 24px;
+  color: #2e7d32;
+}
+
+.order-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.order-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.nav-pills-dark .nav-link {
+  color: #333;
+}
+
+.nav-pills-dark .nav-link.active {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+.loader {
+  text-align: center;
+}

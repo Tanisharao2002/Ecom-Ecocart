@@ -1,0 +1,42 @@
+.about-us-page {
+    padding: 2rem;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    color: #0a5d5d;
+  }
+  
+  .page-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #4b807e;
+  }
+  
+  .groups-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .group-card {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .group-title {
+    font-size: 1.25rem;
+    color: #0a5d5d;
+    margin-bottom: 0.5rem;
+  }
+  
+  .group-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  

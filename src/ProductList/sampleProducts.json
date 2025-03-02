@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "name": "Recycled Paper Notebooks",
+    "category": "Stationery",
+    "price": 99,
+    "stock": 100,
+    "tags": ["recycled", "eco-friendly", "stationery", "notebooks"],
+    "image": "https://th.bing.com/th/id/OIP.OqdZ3KJXdxPL7ln_z9GLFgHaFR?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "2",
+    "name": "Bamboo Toothbrushes",
+    "category": "Personal Care",
+    "price": 50,
+    "stock": 200,
+    "tags": ["bamboo", "personal care", "eco-friendly", "toothbrush"],
+    "image": "https://th.bing.com/th/id/OIP.AAmzgeWCPdKJ92R6SspRDgHaHa?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": "3",
+    "name": "Compostable Trash Bags",
+    "category": "Home & Kitchen",
+    "price": 50,
+    "stock": 150,
+    "tags": ["compostable", "home", "kitchen", "eco-friendly", "trash bags"],
+    "image": "https://th.bing.com/th/id/OIP.9Gfg_AOPJfQ4-CxYS7-4uwHaHa?w=196&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+  },
+  {
+    "id": "4",
+    "name": "Organic Cotton Clothing",
+    "category": "Apparel & Fashion",
+    "price": 525.99,
+    "stock": 50,
+    "tags": ["organic", "cotton", "clothing", "apparel", "eco-friendly"],
+    "image": "https://th.bing.com/th/id/OIP.G49QES78qiIZd6ZBYfKcCwHaHa?w=210&h=210&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+  },
+  {
+    "id": "5",
+    "name": "Reusable Water Bottles",
+    "category": "Beverages & Utensils",
+    "price": 50,
+    "stock": 300,
+    "tags": ["reusable", "water bottle", "eco-friendly", "beverages"],
+    "image": "https://cdn.notonthehighstreet.com/fs/30/7b/c176-3238-4024-9d09-0a2175a016ae/original_reusable-sustainable-bamboo-water-bottle.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Organic Seeds and Plants",
+    "category": "Gardening & Outdoor",
+    "price": 259,
+    "stock": 200,
+    "tags": ["organic", "seeds", "gardening", "plants", "eco-friendly"],
+    "image": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/18086231a.webp"
+  },
+  {
+    "id": "7",
+    "name": "Natural Organic Teas and Herbs",
+    "category": "Health & Wellness",
+    "price": 599,
+    "stock": 100,
+    "tags": ["organic", "teas", "herbs", "health", "wellness", "natural"],
+    "image": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/13868302a.webp"
+  }
+]
