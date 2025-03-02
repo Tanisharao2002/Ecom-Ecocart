@@ -4,6 +4,7 @@
   "homepage": "https://tanisharao2002.github.io/Ecom-Ecocart/",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.14.0",
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@popperjs/core": "^2.11.8",
     "@testing-library/jest-dom": "^5.17.0",
@@ -57,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "react-refresh": "^0.10.0"
   },
