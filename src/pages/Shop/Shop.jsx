@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Shop.css";
 import { MagnifyingGlass } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -7,13 +8,14 @@ import koaSoap from "../../images/koa soap.jpg";
 import { useParams } from "react-router-dom";
 import { firestore } from "../../context/Firebase";
 import { collection } from "firebase/firestore";
-import { doc, setDoc, arrayUnion, arrayRemove} from "firebase/firestore";
+import { doc, setDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import Search from "../../Component/Search";
 import { useFirebase } from "../../context/Firebase";
-function Dropdown() {  
-  const {userData} = useFirebase();
+function Dropdown() {
+  const { userData } = useFirebase();
   const { shopCat } = useParams();
+  console.log(shopCat);
   const [openDropdowns, setOpenDropdowns] = useState([]);
   console.log("shop" + shopCat);
   const toggleDropdown = (index) => {
@@ -23,11 +25,14 @@ function Dropdown() {
       setOpenDropdowns([...openDropdowns, index]);
     }
   };
-
+  const [star, setStar] = useState(0);
+  const [price, setPrice] = useState(1000);
   const productsRef = collection(firestore, "products");
   const [products] = useCollectionData(productsRef);
   const [disp, setDisp] = useState("False");
   const [productSearch, setProductSearch] = useState("");
+  const [numberValue, setNumberValue] = useState(0);
+  const [sortFeatured, setSortFeatured] = useState("");
   // loading
   const [loaderStatus, setLoaderStatus] = useState(true);
   useEffect(() => {
@@ -36,20 +41,19 @@ function Dropdown() {
     }, 1500);
   }, []);
 
-
   const addToCart = async (e, sid, image, name, userId, amount) => {
     e.preventDefault();
     try {
-      const cartRef = collection(firestore, "buyers", userId, "cart"); 
+      const cartRef = collection(firestore, "buyers", userId, "cart");
       const cartItemRef = doc(cartRef);
       await setDoc(
         cartItemRef,
         {
           suppId: sid,
-          userId: userId,  
+          userId: userId,
           price: amount,
-          image:image,
-          name:name,
+          image: image,
+          name: name,
         },
         { merge: true }
       );
@@ -62,16 +66,16 @@ function Dropdown() {
   const addToWishlist = async (e, sid, image, name, userId, amount) => {
     e.preventDefault();
     try {
-      const cartRef = collection(firestore, "buyers", userId, "wishlist"); 
+      const cartRef = collection(firestore, "buyers", userId, "wishlist");
       const cartItemRef = doc(cartRef);
       await setDoc(
         cartItemRef,
         {
           suppId: sid,
-          userId: userId,  
+          userId: userId,
           price: amount,
-          image:image,
-          name:name,
+          image: image,
+          name: name,
         },
         { merge: true }
       );
@@ -81,6 +85,10 @@ function Dropdown() {
     }
   };
 
+  const handleChangeNumber = (value) => {
+    setNumberValue(value);
+    console.log(numberValue);
+  };
 
   return (
     <div>
@@ -111,60 +119,67 @@ function Dropdown() {
                   <ul className="nav flex-column" key={index}>
                     <li className="nav-item">
                       <Link
-                        className="nav-link"
-                        to="#"
-                        onClick={() => toggleDropdown(index)}
-                        aria-expanded={
-                          openDropdowns.includes(index) ? "true" : "false"
-                        }
-                        aria-controls={`categoryFlush${index + 1}`}
-                      >
-                        {dropdown.title} <i className="fa fa-chevron-down" />
-                      </Link>
-                      <div
-                        className={`collapse ${
-                          openDropdowns.includes(index) ? "show" : ""
+                        className={`${
+                          shopCat === dropdown.title
+                            ? "nav-link active-link"
+                            : "nav-link"
                         }`}
-                        id={`categoryFlush${index + 1}`}
+                        to={`/Shop/${dropdown.title}`}
                       >
-                        <div>
-                          <ul className="nav flex-column ms-3">
-                            {dropdown.items.map((item, itemIndex) => (
-                              <li className="nav-item" key={itemIndex}>
-                                <Link className="nav-link" to="#">
-                                  {item}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+                        {dropdown.title}
+                      </Link>
                     </li>
                   </ul>
                 ))}
                 <div>
                   <div className="py-4">
                     {/* price */}
-                    <h5 className="mb-3">Price</h5>
+                    <h5 className="mb-3">
+                      Price {`<`} ₹ {price}
+                    </h5>
+                    <span id="priceRange-value" className="small">
+                      {" "}
+                    </span>
                     <div>
                       {/* range */}
                       <div id="priceRange" className="mb-3" />
-                      <small className="text-muted">Price:</small>{" "}
-                      <span id="priceRange-value" className="small" />
+                      <span>
+                        {" "}
+                        <small className="text-muted">Price:</small>
+                        <span id="priceRange-value" className="small">
+                          100
+                        </span>
+                      </span>
+
+                      <input
+                        type="range"
+                        min="100"
+                        max="1000"
+                        className="rangeInput"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                      />
+                      <span id="priceRange-value" className="small">
+                        1000
+                      </span>
                     </div>
                   </div>
                   {/* rating */}
                   <div className="py-4">
-                    <h5 className="mb-3">Rating</h5>
-                    <div>
-                      {/* form check */}
+                    <h5 className="mb-3">
+                      Rating : {star}{" "}
+                      <i className="bi bi-star-fill text-warning" />
+                    </h5>
+                    {/* <div>
+                  
                       <div className="form-check mb-2">
-                        {/* input */}
+                       
                         <input
                           className="form-check-input"
                           type="checkbox"
                           defaultValue
                           id="ratingFive"
+                          value = "5"
                         />
                         <label
                           className="form-check-label"
@@ -177,15 +192,16 @@ function Dropdown() {
                           <i className="bi bi-star-fill text-warning " />
                         </label>
                       </div>
-                      {/* form check */}
+                     
                       <div className="form-check mb-2">
-                        {/* input */}
+                 
                         <input
                           className="form-check-input"
                           type="checkbox"
                           defaultValue
                           id="ratingFour"
                           defaultChecked
+                          value = "4"
                         />
                         <label
                           className="form-check-label"
@@ -198,14 +214,15 @@ function Dropdown() {
                           <i className="bi bi-star text-warning" />
                         </label>
                       </div>
-                      {/* form check */}
+                
                       <div className="form-check mb-2">
-                        {/* input */}
+   
                         <input
                           className="form-check-input"
                           type="checkbox"
                           defaultValue
                           id="ratingThree"
+                          value = "3"
                         />
                         <label
                           className="form-check-label"
@@ -218,14 +235,15 @@ function Dropdown() {
                           <i className="bi bi-star text-warning" />
                         </label>
                       </div>
-                      {/* form check */}
+          
                       <div className="form-check mb-2">
-                        {/* input */}
+          
                         <input
                           className="form-check-input"
                           type="checkbox"
                           defaultValue
                           id="ratingTwo"
+                          value = "2"
                         />
                         <label className="form-check-label" htmlFor="ratingTwo">
                           <i className="bi bi-star-fill text-warning" />
@@ -235,14 +253,15 @@ function Dropdown() {
                           <i className="bi bi-star text-warning" />
                         </label>
                       </div>
-                      {/* form check */}
+             
                       <div className="form-check mb-2">
-                        {/* input */}
+        
                         <input
                           className="form-check-input"
                           type="checkbox"
                           defaultValue
                           id="ratingOne"
+                          value = "1"
                         />
                         <label className="form-check-label" htmlFor="ratingOne">
                           <i className="bi bi-star-fill text-warning" />
@@ -252,7 +271,22 @@ function Dropdown() {
                           <i className="bi bi-star text-warning" />
                         </label>
                       </div>
-                    </div>
+                    </div> */}
+                    <span id="priceRange-value" className="">
+                      0 <i className="bi bi-star-fill text-warning" />
+                    </span>
+                    <input
+                      type="range"
+                      min="0"
+                      max="5"
+                      steps="5"
+                      className="rangeInput"
+                      value={star}
+                      onChange={(e) => setStar(e.target.value)}
+                    />{" "}
+                    <span id="priceRange-value" className="">
+                      5 <i className="bi bi-star-fill text-warning" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -276,38 +310,25 @@ function Dropdown() {
                   <div></div>
                   {/* icon */}
                   <div className="d-flex justify-content-between align-items-center">
-                    <Link to="/ShopListCol" className="text-muted me-3">
+                    {/* <Link to="/ShopListCol" className="text-muted me-3">
                       <i className="bi bi-list-ul" />
-                    </Link>
-                    <Link to="/ShopGridCol3" className=" me-3 active">
+                    </Link> */}
+                    {/* <Link to="/ShopGridCol3" className=" me-3 active">
                       <i className="bi bi-grid" />
-                    </Link>
-                    <Link to="/Shop" className="me-3 text-muted">
+                    </Link> */}
+                    <Link to="/Shop" className="me-3 text-muted active">
                       <i className="bi bi-grid-3x3-gap" />
                     </Link>
-                    <div className="me-2">
-                      {/* select option */}
-                      <select
-                        className="form-select"
-                        aria-label="Default select example"
-                      >
-                        <option selected>Show: 50</option>
-                        <option value={10}>10</option>
-                        <option value={20}>20</option>
-                        <option value={30}>30</option>
-                      </select>
-                    </div>
+
                     <div>
                       {/* select option */}
                       <select
                         className="form-select"
                         aria-label="Default select example"
                       >
-                        <option selected>Sort by: Featured</option>
+                        <option selected value={sortFeatured} onChange={(e)=>setSortFeatured(e.target.value)}>Sort by: Featured</option>
                         <option value="Low to High">Price: Low to High</option>
                         <option value="High to Low"> Price: High to Low</option>
-                        <option value="Release Date"> Release Date</option>
-                        <option value="Avg. Rating"> Avg. Rating</option>
                       </select>
                     </div>
                   </div>
@@ -339,7 +360,10 @@ function Dropdown() {
                               .includes(productSearch.toLowerCase()) ||
                             product.category
                               .toLowerCase()
-                              .includes(productSearch.toLowerCase()))
+                              .includes(productSearch.toLowerCase())) &&
+                          (!price || product.price <= Number(price)) &&
+                          (product.rating >= star) &&
+                          ( sortFeatured == "")
                       )
                       .map((product) => (
                         <div
@@ -347,8 +371,8 @@ function Dropdown() {
                           className="card card-product mb-4"
                           style={{
                             flex: "1 1 calc(25% - 1rem)",
-                            maxWidth: "calc(25% - 1rem)", 
-                            margin: "0.5rem", 
+                            maxWidth: "calc(25% - 1rem)",
+                            margin: "0.5rem",
                           }}
                         >
                           <div className="card-body">
@@ -370,7 +394,16 @@ function Dropdown() {
                                   data-bs-toggle="tooltip"
                                   data-bs-html="true"
                                   title="Wishlist"
-                                  onClick={(e)=>{addToWishlist(e, product.suppId,product.image, product.name, userData.uid,product.price)}}
+                                  onClick={(e) => {
+                                    addToWishlist(
+                                      e,
+                                      product.suppId,
+                                      product.image,
+                                      product.name,
+                                      userData.uid,
+                                      product.price
+                                    );
+                                  }}
                                 >
                                   <i className="bi bi-heart-fill" />
                                 </Link>
@@ -397,13 +430,9 @@ function Dropdown() {
                               {/* rating */}
                               <small className="text-warning">
                                 <i className="bi bi-star-fill" />
-                                <i className="bi bi-star-fill" />
-                                <i className="bi bi-star-fill" />
-                                <i className="bi bi-star-fill" />
-                                <i className="bi bi-star-half" />
                               </small>{" "}
                               <span className="text-muted small">
-                                {product.stock}
+                                {product.rating}
                               </span>
                             </div>
                             {/* price */}
@@ -421,7 +450,15 @@ function Dropdown() {
                                 <Link
                                   to="#!"
                                   className="btn btn-primary btn-sm"
-                                  onClick={(e)=>{addToCart(product.suppId,product.image, product.name, userData.uid,product.price)}}
+                                  onClick={(e) => {
+                                    addToCart(
+                                      product.suppId,
+                                      product.image,
+                                      product.name,
+                                      userData.uid,
+                                      product.price
+                                    );
+                                  }}
                                 >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -539,12 +576,12 @@ const dropdownData = [
     title: "Health & Wellness",
     items: [
       "Natural organic teas and herbs",
-    //   "Reusable menstrual products",
-    //   "Eco-friendly yoga mats",
-    //   "Organic, reusable cotton pads",
-    //   "Natural sleep masks",
-    //   "Non-toxic essential oils",
-    //   "Eco-friendly first aid kits",
+      //   "Reusable menstrual products",
+      //   "Eco-friendly yoga mats",
+      //   "Organic, reusable cotton pads",
+      //   "Natural sleep masks",
+      //   "Non-toxic essential oils",
+      //   "Eco-friendly first aid kits",
     ],
   },
 ];

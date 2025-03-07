@@ -20,10 +20,17 @@ const ProductItem = () => {
               </div>
             </div>
           </div>
-          {/* <div className="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3"> */}
+          <div
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "0.5cm",
+              flexWrap: "wrap",
+            }}
+          >
             <div className=" row-cols-lg-6 d-flex flex-wrap gap-3 mt-2">
               {products && products.length > 0 ? (
-                products.slice(0, 5).map((p) => (
+                products.slice(0, 4).map((p) => (
                   <div className="card-wrapper">
                     {" "}
                     <div className="card card-product">
@@ -37,6 +44,7 @@ const ProductItem = () => {
                               src={p.image}
                               alt="Grocery Ecommerce Template"
                               className="mb-3 img-fluid"
+                              style={{ width: "6.5cm", height: "6cm" }}
                             />
                           </Link>
                           <div className="card-product-action">
@@ -75,7 +83,7 @@ const ProductItem = () => {
                 <p>Error Fetching best ones. Continue by Shop!</p>
               )}
             </div>
-          {/* </div> */}
+          </div>
         </div>
       </section>
       {/* Popular Products End*/}

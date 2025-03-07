@@ -220,7 +220,10 @@ const Home = () => {
                   ↑
                 </button>
               </div>
-              <section className="hero-section">
+              <section
+                className="hero-section"
+                style={{ marginBottom: "15px" }}
+              >
                 <div className="container mt-8">
                   <div
                     id="carouselExampleFade"
@@ -235,23 +238,47 @@ const Home = () => {
                             backgroundSize: "cover",
                             borderRadius: ".5rem",
                             backgroundPosition: "center",
+                            minWidth: "95%",
+                            minHeight: "95%",
                           }}
                         >
-                          <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
+                          <div
+                            className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center"
+                            style={{ margin: "1cm" }}
+                          >
                             <span className="badge text-bg-warning">
                               Opening Sale Discount 50%
                             </span>
-                            <h2 className="text-dark display-5 fw-bold mt-4">
+                            <h2
+                              className="text-dark display-5 fw-bold mt-4"
+                              style={{
+                                textShadow:
+                                  "2px 2px 5px rgba(236, 236, 236, 0.9)",
+                              }}
+                            >
                               Ecocart: Your Gateway to Sustainable Living
                             </h2>
-                            <p className="lead">
+                            <p
+                              className="lead"
+                              style={{
+                                color: "#708090",
+                                textShadow:
+                                  "2px 2px 5px rgba(236, 236, 236, 0.9)",
+                              }}
+                            >
                               Discover Eco-Friendly Products for a Greener
                               Tomorrow
                             </p>
-                            <Link to="#!" className="btn btn-dark mt-3">
-                              Shop Now{" "}
-                              <i className="feather-icon icon-arrow-right ms-1" />
-                            </Link>
+                            <div className="d-flex justify-content-center">
+                              <Link
+                                to="/Shop"
+                                className="btn btn-dark mt-3"
+                                style={{ width: "200px", marginTop: "1cm" }}
+                              >
+                                Shop Now{" "}
+                                <i className="feather-icon icon-arrow-right ms-1" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -264,22 +291,44 @@ const Home = () => {
                             backgroundPosition: "center",
                           }}
                         >
-                          <div className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center">
+                          <div
+                            className="ps-lg-12 py-lg-16 col-xxl-5 col-md-7 py-14 px-8 text-xs-center"
+                            style={{ margin: "1cm" }}
+                          >
                             <span className="badge text-bg-warning">
                               Free Shipping - orders over ₹750
                             </span>
-                            <h2 className="text-dark display-5 fw-bold mt-4">
+                            <h2
+                              className="text-dark display-5 fw-bold mt-4"
+                              style={{
+                                textShadow:
+                                  "2px 2px 5px rgba(236, 236, 236, 0.9)",
+                              }}
+                            >
                               Free Shipping on <br /> orders over{" "}
                               <span className="text-primary">₹750</span>
                             </h2>
-                            <p className="lead">
+                            <p
+                              className="lead"
+                              style={{
+                                color: "#5e5e5e",
+                                textShadow:
+                                  "2px 2px 5px rgba(236, 236, 236, 0.9)",
+                              }}
+                            >
                               Free Shipping to First-Time Customers Only, After
                               promotions and discounts are applied.
                             </p>
-                            <Link to="#!" className="btn btn-dark mt-3">
-                              Shop Now{" "}
-                              <i className="feather-icon icon-arrow-right ms-1" />
-                            </Link>
+                            <div className="d-flex justify-content-center">
+                              <Link
+                                to="/Shop"
+                                className="btn btn-dark mt-10"
+                                style={{ width: "200px" }}
+                              >
+                                Shop Now{" "}
+                                <i className="feather-icon icon-arrow-right ms-1" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -312,24 +361,24 @@ const Home = () => {
                 </div>
               </section>
             </>
-            <>
+            {/* <>
               <section className="mt-8">
-                {/* contianer */}
+           
                 <div className="container ">
                   <div className="row">
-                    {/* col */}
+                  
                     <Slide direction="down">
                       <div className="col-12">
-                        {/* cta */}
+                     
                         <div className="bg-light d-lg-flex justify-content-between align-items-center py-6 py-lg-3 px-8 rounded-3 text-center text-lg-start">
-                          {/* img */}
+                     
                           <div className="d-lg-flex align-items-center">
                             <img
                               src={abouticon}
                               alt="about-icon"
                               className="img-fluid"
                             />
-                            {/* text */}
+                           
                             <div className="ms-lg-4">
                               <h1 className="fs-2 mb-1">Welcome to EcoCart</h1>
                               <span>
@@ -341,7 +390,7 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="mt-3 mt-lg-0">
-                            {/* btn */}
+                             btn }
                             <Link to="#" className="btn btn-dark">
                               Download EcoCart App
                             </Link>
@@ -352,7 +401,7 @@ const Home = () => {
                   </div>
                 </div>
               </section>
-            </>
+            </> */}
             <>
               <div className="container">
                 <h3 className="h3style" data-title="sourcing partners">
@@ -363,9 +412,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part1}
-                        style={{ objectFit: "cover" }}
-                        className="img-fluid "
+                        // className="img-fluid "
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title partner">
                         <div>Green Threads Collective</div>
@@ -376,9 +425,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part2}
-                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title">
                         <div>Harmony Home Creations</div>
@@ -389,9 +438,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part3}
-                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title">
                         <div>EcoNest Co-op</div>
@@ -402,9 +451,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part4}
-                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title">
                         <div>Sunrise Craft Guild</div>
@@ -415,9 +464,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part5}
-                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title">
                         <div>Bloom Earthworks</div>
@@ -428,9 +477,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part6}
-                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title">
                         <div>Roots & Wings Ventures</div>
@@ -441,9 +490,9 @@ const Home = () => {
                     <div className="partner-list">
                       <img
                         src={part7}
-                        style={{ objectFit: "cover" }}
                         className="img-fluid"
                         alt="product"
+                        style={{ maxWidth: "2cm", objectFit: "cover" }}
                       />
                       <h6 class="card-title">
                         <div>Pure Haven Essentials</div>
@@ -574,235 +623,265 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="row ">
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent(
-                                "Health & Wellness"
-                              )}`}
-                            >
-                              <img
-                                src={hf}
-                                alt="dairy-bread-eggs"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            {/* text */}
-                            <div className="mt-4">
-                              <h5 className="fs-6 mb-0">
-                                {" "}
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Health & Wellness"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Health & Wellness
-                                </Link>
-                              </h5>
-                            </div>
-                          </div>
-                        </Zoom>
-                      </div>
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent(
-                                "Gardening & Outdoor"
-                              )}`}
-                            >
-                              <img
-                                src={go}
-                                alt="fruits-vegetables"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            <div className="mt-4">
+                    <div className="container">
+                      <div className="row g-3 justify-content-center">
+                        {/* col */}
+                        <div
+                          className="col-lg-1.5 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent(
+                                  "Health & Wellness"
+                                )}`}
+                              >
+                                <img
+                                  src={hf}
+                                  alt="dairy-bread-eggs"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
                               {/* text */}
-                              <h5 className="fs-6 mb-0">
-                                {" "}
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Gardening & Outdoor"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Gardening & Outdoor
-                                </Link>
-                              </h5>
+                              <div className="mt-4">
+                                <h5 className="fs-6 mb-0">
+                                  {" "}
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Health & Wellness"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Health & Wellness
+                                  </Link>
+                                </h5>
+                              </div>
                             </div>
-                          </div>
-                        </Zoom>
-                      </div>
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent(
-                                "Beverages & Utensils"
-                              )}`}
-                            >
-                              <img
-                                src={bu}
-                                alt="snack-munchies"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            {/* text */}
-                            <div className="mt-4">
-                              <h5 className="fs-6 mb-0">
-                                {" "}
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Beverages & Utensils"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Beverages & Utensils
-                                </Link>
-                              </h5>
+                          </Zoom>
+                        </div>
+                        {/* col */}
+                        <div
+                          className="col-lg-1.5 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent(
+                                  "Gardening & Outdoor"
+                                )}`}
+                              >
+                                <img
+                                  src={go}
+                                  alt="fruits-vegetables"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
+                              <div className="mt-4">
+                                {/* text */}
+                                <h5 className="fs-6 mb-0">
+                                  {" "}
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Gardening & Outdoor"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Gardening & Outdoor
+                                  </Link>
+                                </h5>
+                              </div>
                             </div>
-                          </div>
-                        </Zoom>
-                      </div>
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent(
-                                "Apparel & Fashion"
-                              )}`}
-                            >
-                              <img
-                                src={af}
-                                alt="bakery-biscuits"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            {/* text */}
-                            <div className="mt-4">
-                              <h5 className="fs-6 mb-0">
-                                {" "}
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Apparel & Fashion"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Apparel & Fashion
-                                </Link>
-                              </h5>
+                          </Zoom>
+                        </div>
+                        {/* col */}
+                        <div
+                          className="col-lg-1.5 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent(
+                                  "Beverages & Utensils"
+                                )}`}
+                              >
+                                <img
+                                  src={bu}
+                                  alt="snack-munchies"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
+                              {/* text */}
+                              <div className="mt-4">
+                                <h5 className="fs-6 mb-0">
+                                  {" "}
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Beverages & Utensils"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Beverages & Utensils
+                                  </Link>
+                                </h5>
+                              </div>
                             </div>
-                          </div>
-                        </Zoom>
-                      </div>
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent(
-                                "Home & Kitchen"
-                              )}`}
-                            >
-                              <img
-                                src={hk}
-                                alt="instant-food"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            {/* text */}
-                            <div className="mt-4">
-                              <h5 className="fs-6 mb-0">
-                                {" "}
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Home & Kitchen"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Home & Kitchen
-                                </Link>
-                              </h5>
+                          </Zoom>
+                        </div>
+                        {/* col */}
+                        <div
+                          className="col-lg-2 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent(
+                                  "Apparel & Fashion"
+                                )}`}
+                              >
+                                <img
+                                  src={af}
+                                  alt="bakery-biscuits"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
+                              {/* text */}
+                              <div className="mt-4">
+                                <h5 className="fs-6 mb-0">
+                                  {" "}
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Apparel & Fashion"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Apparel & Fashion
+                                  </Link>
+                                </h5>
+                              </div>
                             </div>
-                          </div>
-                        </Zoom>
-                      </div>
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent(
-                                "Personal Care"
-                              )}`}
-                            >
-                              <img
-                                src={pc}
-                                alt="tea-coffee-drinks"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            {/* text */}
-                            <div className="mt-4">
-                              <h5 className="fs-6 mb-0">
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Personal Care"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Personal Care
-                                </Link>
-                              </h5>
+                          </Zoom>
+                        </div>
+                        {/* col */}
+                        <div
+                          className="col-lg-2 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent(
+                                  "Home & Kitchen"
+                                )}`}
+                              >
+                                <img
+                                  src={hk}
+                                  alt="instant-food"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
+                              {/* text */}
+                              <div className="mt-4">
+                                <h5 className="fs-6 mb-0">
+                                  {" "}
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Home & Kitchen"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Home & Kitchen
+                                  </Link>
+                                </h5>
+                              </div>
                             </div>
-                          </div>
-                        </Zoom>
-                      </div>
-                      {/* col */}
-                      <div className="col-lg-2 col-md-4 col-6 fade-zoom">
-                        <Zoom>
-                          <div className="text-center mb-10">
-                            {/* img */}
-                            <Link
-                              to={`/Shop/${encodeURIComponent("Stationery")}`}
-                            >
-                              <img
-                                src={st}
-                                alt="cold-drinks-juices"
-                                className="card-image rounded-circle"
-                              />
-                            </Link>
-                            {/* text */}
-                            <div className="mt-4">
-                              <h5 className="fs-6 mb-0">
-                                <Link
-                                  to={`/Shop/${encodeURIComponent(
-                                    "Stationery"
-                                  )}`}
-                                  className="text-inherit"
-                                >
-                                  Stationery
-                                </Link>
-                              </h5>
+                          </Zoom>
+                        </div>
+                        {/* col */}
+                        <div
+                          className="col-lg-2 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent(
+                                  "Personal Care"
+                                )}`}
+                              >
+                                <img
+                                  src={pc}
+                                  alt="tea-coffee-drinks"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
+                              {/* text */}
+                              <div className="mt-4">
+                                <h5 className="fs-6 mb-0">
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Personal Care"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Personal Care
+                                  </Link>
+                                </h5>
+                              </div>
                             </div>
-                          </div>
-                        </Zoom>
+                          </Zoom>
+                        </div>
+                        {/* col */}
+                        <div
+                          className="col-lg-2 col-md-2 col-sm-3 col-4 text-center"
+                          style={{ width: "12.5%" }}
+                        >
+                          <Zoom>
+                            <div className="text-center mb-10">
+                              {/* img */}
+                              <Link
+                                to={`/Shop/${encodeURIComponent("Stationery")}`}
+                              >
+                                <img
+                                  src={st}
+                                  alt="cold-drinks-juices"
+                                  className="card-image rounded-circle"
+                                  style={{ width: "2.5cm", padding: "0.3cm" }}
+                                />
+                              </Link>
+                              {/* text */}
+                              <div className="mt-4">
+                                <h5 className="fs-6 mb-0">
+                                  <Link
+                                    to={`/Shop/${encodeURIComponent(
+                                      "Stationery"
+                                    )}`}
+                                    className="text-inherit"
+                                  >
+                                    Stationery
+                                  </Link>
+                                </h5>
+                              </div>
+                            </div>
+                          </Zoom>
+                        </div>
+                        {/* col */}
                       </div>
-                      {/* col */}
                     </div>
                   </div>
                 </div>
@@ -829,12 +908,11 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="row row-cols-1 row-cols-md-3 g-4">
-                    <div className="col-md-9 ">
+                  <div style={{marginBottom:"100px", justifyContent:"center", alignItems:"center", gap:"0.8cm", flexWrap:"wrap"}}>
+                    <div>
                       <div className="image-itemss">
                         <Slider {...settings1}>
-                          {
-                            products.map((product) => (
+                          {products.map((product) => (
                             <div
                               key={product.id}
                               className="images swiper-slide px-4"
@@ -842,14 +920,16 @@ const Home = () => {
                               <div className="col">
                                 <div className="card card-product">
                                   <div className="card-body">
-                                    <div className="text-center position-relative">
+                                    <div
+                                      className="text-center position-relative"
+                                      style={{ alignItems: "center" }}
+                                    >
                                       <Link to="#!">
                                         <img
                                           src={product.image}
                                           alt={product.name}
                                           style={{
-                                            width: 100,
-                                            align: "center",
+                                            height: "5cm",
                                           }}
                                           className="mb-3 img-fluid"
                                         />
@@ -975,7 +1055,7 @@ const Home = () => {
             </>
             <>
               {/* cta section */}
-              <section>
+              {/* <section>
                 <div
                   className="container"
                   style={{
@@ -983,25 +1063,25 @@ const Home = () => {
                     backgroundSize: "cover",
                   }}
                 >
-                  {/* <hr className="my-lg-14 my-8"> */}
-                  {/* row */}
+                  <hr className="my-lg-14 my-8">
+                  row
                   <div className="row align-items-center text-center justify-content-center">
                     <div className=" col-lg-6 col-md-6 fade-in-left">
                       <div className="mb-6">
                         <div className="mb-7">
-                          {/* heading */}
+                          heading
                           <h1>Get the Ecocart app</h1>
                           <h5 className="mb-0">
                             Get the Best Eco-Friendly Shopping Experience!
                           </h5>
                         </div>
                         <div>
-                          {/* app */}
-                          {/* <small>Download app from</small> */}
+                          app
+                          <small>Download app from</small>
                           <ul className="list-inline mb-0 mt-2 ">
-                            {/* list item */}
+                            list item
                             <li className="list-inline-item">
-                              {/* img */}
+                              img
                               <Link to="#!">
                                 {" "}
                                 <img
@@ -1012,7 +1092,7 @@ const Home = () => {
                               </Link>
                             </li>
                             <li className="list-inline-item">
-                              {/* img */}
+                              img
                               <Link to="#!">
                                 {" "}
                                 <img
@@ -1028,14 +1108,14 @@ const Home = () => {
                     </div>
                     <div className=" offset-lg-2 col-lg-4 col-md-6 fade-zoom">
                       <div className="text-lg-start">
-                        {/* img */}
+                        img
                         <img src={phone} alt="iphone" className=" img-fluid" />
                       </div>
                     </div>
                   </div>
-                  {/* <hr className="my-lg-14 my-8"> */}
+                  <hr className="my-lg-14 my-8">
                 </div>
-              </section>
+              </section> */}
             </>
           </>
         )}
